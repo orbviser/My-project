@@ -8,21 +8,45 @@ public class LearningCurve : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        switch (diceRoll)
-        {
-            case 7:
-            case 15:
-                Debug.Log("Medicore damage, not bad.");
-                break;
-            case 25:
-                Debug.Log("Critical hit, the creature got fisting in his ass");
-                break;
-            default:
-                Debug.Log("You completly missed and fell on your face.");
-                break;
-        }
-    }
+        //Massive
+        int[] topPlayersScores = { 713, 549, 984 };
+        topPlayersScores[1] = 1001;
+        Debug.Log(topPlayersScores[1]);
 
+        //List
+        List<string> questPartyMembers = new List<string>()
+        { "Grim the Barbarian", "Merlin the Wise", "Sterling the Knight"};
+        //Add to the end of the list 
+        questPartyMembers.Add("Craven the Necromancer");
+        //Add to the position 2
+        questPartyMembers.Insert(1, "Tanis the Thief");
+        //Remove 1st item
+        questPartyMembers.RemoveAt(0);
+        //Remove item "Grim the Barbarian"
+        questPartyMembers.Remove("Grim the Barbarian");
+
+        //Dictionarry
+        Dictionary<string, int> itemInventory = new Dictionary<string, int>()
+        {
+            {"Potion", 6},
+            {"Sword", 1},
+            {"Helmet", 1}
+        };
+        Debug.LogFormat("Items: {0}", itemInventory.Count);
+        //Update count of potions
+        itemInventory["Potin"] = 10;
+        //Add new item
+        itemInventory.Add("Throwing Knife", 3);
+        //Add new item
+        itemInventory["Bandage"] = 5;
+        //Update count of Aspirin if it exist
+        if (itemInventory.ContainsKey("Aspirin"))
+        {
+            itemInventory["Aspirin"] = 3;
+        }
+        //Remove helmet from inventory
+        itemInventory.Remove("Helmet");
+    }
 
     // Update is called once per frame
     void Update()
