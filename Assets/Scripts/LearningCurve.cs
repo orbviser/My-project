@@ -14,7 +14,7 @@ public class LearningCurve : MonoBehaviour
             case 15:
                 Debug.Log("Medicore damage, not bad.");
                 break;
-            case 20:
+            case 25:
                 Debug.Log("Critical hit, the creature goes down!");
                 break;
             default:
